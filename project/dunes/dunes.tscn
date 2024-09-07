@@ -1,0 +1,151 @@
+[gd_scene load_steps=7 format=3 uid="uid://dgh1qjc0cc1m0"]
+
+[ext_resource type="Texture2D" uid="uid://7whogikt2ie1" path="res://dunes/dunes_background.png" id="1_6mdxu"]
+[ext_resource type="Script" path="res://dunes/dunes.gd" id="1_man34"]
+[ext_resource type="Script" path="res://items/item.gd" id="2_1buce"]
+[ext_resource type="Texture2D" uid="uid://cnn1ikk2upefo" path="res://dunes/dune_button_texture.png" id="2_p8o7c"]
+[ext_resource type="Resource" uid="uid://dcl5nmjrbgppr" path="res://items/scorpion.tres" id="3_tphrg"]
+[ext_resource type="Resource" uid="uid://bdkgyypq56hck" path="res://items/shot_glass.tres" id="4_6n38j"]
+
+[node name="Dunes" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_man34")
+_items = Array[ExtResource("2_1buce")]([ExtResource("3_tphrg"), ExtResource("4_6n38j")])
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_6mdxu")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -154.0
+offset_top = -85.5
+offset_right = 154.0
+offset_bottom = 85.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 24
+theme_override_constants/v_separation = 16
+columns = 6
+
+[node name="Button" type="TextureButton" parent="GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_p8o7c")
+
+[node name="Button2" type="TextureButton" parent="GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_p8o7c")
+
+[node name="Button3" type="TextureButton" parent="GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_p8o7c")
+
+[node name="Button4" type="TextureButton" parent="GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_p8o7c")
+
+[node name="Button5" type="TextureButton" parent="GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_p8o7c")
+
+[node name="Button6" type="TextureButton" parent="GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_p8o7c")
+
+[node name="Button7" type="TextureButton" parent="GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_p8o7c")
+
+[node name="Button8" type="TextureButton" parent="GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_p8o7c")
+
+[node name="Button9" type="TextureButton" parent="GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_p8o7c")
+
+[node name="Button10" type="TextureButton" parent="GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_p8o7c")
+
+[node name="Button11" type="TextureButton" parent="GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_p8o7c")
+
+[node name="Button12" type="TextureButton" parent="GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_p8o7c")
+
+[node name="Button13" type="TextureButton" parent="GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_p8o7c")
+
+[node name="Button14" type="TextureButton" parent="GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_p8o7c")
+
+[node name="Button15" type="TextureButton" parent="GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_p8o7c")
+
+[node name="Button16" type="TextureButton" parent="GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_p8o7c")
+
+[node name="Button17" type="TextureButton" parent="GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_p8o7c")
+
+[node name="Button18" type="TextureButton" parent="GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_p8o7c")
+
+[node name="Button19" type="TextureButton" parent="GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_p8o7c")
+
+[node name="Button20" type="TextureButton" parent="GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_p8o7c")
+
+[node name="Button21" type="TextureButton" parent="GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_p8o7c")
+
+[node name="Button22" type="TextureButton" parent="GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_p8o7c")
+
+[node name="Button23" type="TextureButton" parent="GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_p8o7c")
+
+[node name="Button24" type="TextureButton" parent="GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_p8o7c")
+
+[node name="DaylightLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -88.0
+offset_right = 88.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "Daylight Hours Left: 12"

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://bdkgyypq56hck"]
+
+[ext_resource type="Script" path="res://items/item.gd" id="1_wjgp2"]
+[ext_resource type="Texture2D" uid="uid://v106kk5ujr3t" path="res://items/shot_glass.png" id="2_t1dma"]
+
+[resource]
+script = ExtResource("1_wjgp2")
+texture = ExtResource("2_t1dma")
+fun_name = "a container that can trap one pesky beetle beneath it"
+practical_name = "a perfect one ounce measuring cup"
+evil_name = "a vessel ancient peoples used for poison"

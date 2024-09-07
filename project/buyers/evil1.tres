@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Buyer" load_steps=3 format=3 uid="uid://buihdxk4uwhj4"]
+
+[ext_resource type="Script" path="res://buyers/buyer.gd" id="1_mryte"]
+[ext_resource type="Texture2D" uid="uid://bccn4rkapqwxn" path="res://buyers/evil1.png" id="2_fbe7h"]
+
+[resource]
+script = ExtResource("1_mryte")
+texture = ExtResource("2_fbe7h")
+text = "I'm interested in that. How might it illicit feelings of doom?"
+item_preference = 2
+dissappointed_text = "It does not suit my agenda."
+happy_customer_text = "That would be a wonderful addition."
