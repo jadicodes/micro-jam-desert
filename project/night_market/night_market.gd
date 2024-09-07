@@ -19,7 +19,13 @@ enum state {
 
 var inventory: Array[Item]
 
+
+func _ready():
+	$Textbox.hide()
+
+
 func start():
+	$Textbox.show()
 	_change_state(state.BUYER_ARRIVES)
 
 
@@ -44,7 +50,7 @@ func _change_state(new_state):
 		state.BUYER_ARRIVES:
 			# Animation
 			_set_item_being_sold()
-			%AnimationPlayer.play("buyer_enters")
+			%AnimationPlayer.play("hand_enters")
 
 
 
@@ -54,6 +60,8 @@ func _reset():
 
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	if anim_name == "hand_enters":
+		%AnimationPlayer.play("buyer_enters")
 	if anim_name == "buyer_enters":
-		%AnimationPlayer.play("hand_enters")
+		$Textbox.set_text("I would like to buy that. What is it?")
 	

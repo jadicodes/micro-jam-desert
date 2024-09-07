@@ -1,1 +1,10 @@
+Label
+ColorRect
+TextureRect
+VBoxContainer
+HBoxContainer
+MarginContainer
+Panel
+PanelContainer
+CanvasLayer
 AnimationPlayer
