@@ -16,7 +16,9 @@ var _tween
 
 @onready var _textbox = %TextboxContainer
 @onready var _start_symbol = %StartSymbol
-@onready var _text = %Label
+@onready var _text1 = %Label
+@onready var _text2 = %Label2
+@onready var _text3 = %Label3
 @onready var _end_symbol = %EndSymbol
 
 
@@ -32,11 +34,13 @@ func _input(event: InputEvent) -> void:
 			_change_state(state.FINISHED)
 
 
-func set_text(text) -> void:
-	_text.text = text
+func set_text(text1, text2, text3) -> void:
+	_text1.text = text1
+	_text2.text = text2
+	_text3.text = text3
 	show_textbox()
 	_tween = create_tween()
-	_tween.tween_property(_text, "visible_ratio", 1.0, len(text) * CHAR_READ_RATE).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)
+	_tween.tween_property(_text1, "visible_ratio", 1.0, len(text1) * CHAR_READ_RATE).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)
 	_tween.connect("finished", _on_tween_finished)
 	_change_state(state.READING)
 
@@ -49,7 +53,9 @@ func show_textbox() -> void:
 
 
 func hide_textbox() -> void:
-	_text.visible_ratio = 0.0
+	#_text1.visible_ratio = 0.0
+	#_text2.visible_ratio = 0.0
+	#_text3.visible_ratio = 0.0
 	_textbox.hide()
 
 
@@ -59,13 +65,13 @@ func _change_state(new_state) -> void:
 	current_state = new_state
 	match current_state:
 		state.READY:
-			_text.visible_ratio = 0.0
+			_text1.visible_ratio = 1.0
 		state.READING:
 			_tween.play()
 			_end_symbol.text = ".."
 		state.FINISHED:
 			_end_symbol.text = "*"
-			_text.visible_ratio = 1.0
+			_text1.visible_ratio = 1.0
 			_tween.pause()
 
 

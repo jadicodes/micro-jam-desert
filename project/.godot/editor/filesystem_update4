@@ -1,7 +1,6 @@
-res://night_market/night_market.tscn
-res://night_market/night_market.gd
 res://game/game.tscn
-res://game/game.gd
+res://night_market/night_market.tscn
 res://textbox/textbox.tscn
 res://textbox/textbox.gd
-res://dunes/dunes.gd
+res://game/game.gd
+res://night_market/night_market.gd

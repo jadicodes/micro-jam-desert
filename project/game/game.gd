@@ -28,7 +28,9 @@ func _change_state(new_state):
 					child.show()
 				else:
 					child.hide()
-			$Textbox.set_text("The day is over and you walk a long journey back home. Once there, you will sell your goods to whoever will buy it. They will take some decieving. Money is not easy to come by.")
+			$Textbox.set_text("The day is over and you walk a long journey back home.", 
+			"You will sell your goods to whoever will buy it.", 
+			"They will take some deceiving. Money is not easy to come by.")
 		state.NIGHT_MARKET:
 			for child in get_children():
 				if child == $NightMarket:
