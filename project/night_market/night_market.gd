@@ -5,14 +5,22 @@ var _current_state: int
 var _item_being_sold: Item
 var _inventory_index: int
 
+var _fun_option: String
+var _practical_option: String
+var _evil_option: String
+
 enum state {
 	BUYER_ARRIVES,
 	MAKE_PITCH,
 	SUCCESS,
-	FAILURE
+	FAILURE,
+	NIGHT_OVER
 }
 
 var inventory: Array[Item]
+
+func start():
+	_change_state(state.BUYER_ARRIVES)
 
 
 func set_inventory(new_inventory: Array[Item]):
@@ -20,7 +28,14 @@ func set_inventory(new_inventory: Array[Item]):
 
 
 func _set_item_being_sold():
+	if inventory[_inventory_index] == null:
+		_change_state(state.NIGHT_OVER)
+
+	_item_being_sold = inventory[_inventory_index]
 	%ItemBeingSoldTexture.texture = _item_being_sold.texture
+	_fun_option = _item_being_sold.fun_name
+	_practical_option = _item_being_sold.practical_name
+	_evil_option = _item_being_sold.evil_name
 
 
 func _change_state(new_state):
@@ -29,3 +44,16 @@ func _change_state(new_state):
 		state.BUYER_ARRIVES:
 			# Animation
 			_set_item_being_sold()
+			%AnimationPlayer.play("buyer_enters")
+
+
+
+func _reset():
+	_inventory_index = 0
+	inventory = []
+
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	if anim_name == "buyer_enters":
+		%AnimationPlayer.play("hand_enters")
+	

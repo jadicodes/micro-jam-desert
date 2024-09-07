@@ -27,3 +27,4 @@ func _change_state(new_state):
 
 func _on_day_ended():
 	_change_state(state.NIGHT_MARKET)
+	$NightMarket.start()
