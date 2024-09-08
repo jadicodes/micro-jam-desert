@@ -1,9 +1,15 @@
 extends Control
 
 var current_state
+var _has_enough_bones: bool
+
 const MARKET_TO_DUNES = preload("res://game/market_to_dunes.png")
 const DUNES_TO_MARKET = preload("res://game/dunes_to_market.png")
 const INTRO = preload("res://game/intro.png")
+const ENDING = preload("res://game/ending.png")
+
+var _days: int = 0
+const _DAYS_TOTAL: int = 3
 
 
 enum state {
@@ -13,6 +19,7 @@ enum state {
 	TRANS_DUNES_TO_NIGHT_MARKET,
 	NIGHT_MARKET,
 	TRANS_NIGHT_MARKET_TO_DUNES,
+	DETERMINE_OUTCOME,
 }
 
 func _ready() -> void:
@@ -67,6 +74,20 @@ func _change_state(new_state):
 					$NightMarket.hide()
 					child.hide()
 			$Textbox.set_text("You must go to the dunes again tomorrow.")
+		state.DETERMINE_OUTCOME:
+			for child in get_children():
+				if child == $Transition or child == %Textbox:
+					$Transition.texture = MARKET_TO_DUNES
+					child.show()
+				else:
+					$NightMarket.hide()
+					child.hide()
+			$Transition.texture = INTRO
+			$Textbox.set_text("It is the end. Tomorrow, your village will be overtaken by the Terrible Ones. You count up your bones...")
+			if $NightMarket.get_bones() >= 100:
+				_has_enough_bones = true
+			else:
+				_has_enough_bones = false
 
 
 func _on_day_ended():
@@ -83,7 +104,17 @@ func _on_textbox_finished_all_text() -> void:
 		_change_state(state.DUNES)
 	if current_state == state.INTRO:
 		_change_state(state.INTRO2)
+	if current_state == state.DETERMINE_OUTCOME:
+		$Transition.texture = ENDING
+		if _has_enough_bones:
+			$Textbox.set_text("The village is doomed. Fortunately, you only see it from a distance. You paid the relocation fee and walk far into the distance with your family at your side. You thank your lucky sand dune as you go.")
+		else:
+			$Textbox.set_text("The village is doomed. You did not have enough bones, and they will not let you leave. Good night.")
 
 
 func _on_night_market_night_ended() -> void:
-	_change_state(state.TRANS_NIGHT_MARKET_TO_DUNES)
+	_days += 1
+	if _days != _DAYS_TOTAL:
+		_change_state(state.TRANS_NIGHT_MARKET_TO_DUNES)
+	else:
+		_change_state(state.DETERMINE_OUTCOME)

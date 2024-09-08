@@ -161,3 +161,7 @@ func _on_buyer_animation_player_animation_finished(anim_name: StringName) -> voi
 func _on_arm_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "hand_enters":
 		_change_state(state.BUYER_ARRIVES)
+
+
+func get_bones() -> int:
+	return number_of_bones

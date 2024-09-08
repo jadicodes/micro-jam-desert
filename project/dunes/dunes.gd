@@ -4,9 +4,9 @@ signal day_ended
 
 @export var _items: Array[Item]
 
-const _DAYLIGHT_HOURS = 3
+const _DAYLIGHT_HOURS = 12
 
-var _chance_of_finding_item: int = 100
+var _chance_of_finding_item: int = 35
 var _daylight_hours_remaining: int = _DAYLIGHT_HOURS
 
 var _nothing_texture = preload("res://dunes/nothing_sand.png")
