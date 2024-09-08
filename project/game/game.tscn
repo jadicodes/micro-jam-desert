@@ -30,5 +30,7 @@ grow_vertical = 2
 color = Color(0.0901961, 0.0352941, 0.0509804, 1)
 
 [node name="Textbox" parent="." instance=ExtResource("4_uux1t")]
+unique_name_in_owner = true
 
+[connection signal="night_ended" from="NightMarket" to="." method="_on_night_market_night_ended"]
 [connection signal="finished_all_text" from="Textbox" to="." method="_on_textbox_finished_all_text"]

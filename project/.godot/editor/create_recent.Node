@@ -1,10 +1,11 @@
+CanvasLayer
+Button
 Label
+VBoxContainer
 ColorRect
 TextureRect
-VBoxContainer
 HBoxContainer
 MarginContainer
 Panel
 PanelContainer
-CanvasLayer
 AnimationPlayer

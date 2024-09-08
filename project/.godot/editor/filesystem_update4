@@ -1,6 +1,12 @@
 res://game/game.tscn
 res://night_market/night_market.tscn
 res://textbox/textbox.tscn
+res://options/options.tscn
+res://options/options.gd
 res://night_market/night_market.gd
-res://textbox/textbox.gd
+res://buyers/fun1.tres
+res://buyers/fun2.tres
+res://buyers/evil2.tres
 res://game/game.gd
+res://dunes/dunes.tscn
+res://dunes/dunes.gd

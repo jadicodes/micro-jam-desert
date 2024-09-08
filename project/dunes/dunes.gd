@@ -4,8 +4,10 @@ signal day_ended
 
 @export var _items: Array[Item]
 
+const _DAYLIGHT_HOURS = 3
+
 var _chance_of_finding_item: int = 100
-var _daylight_hours_remaining: int = 3
+var _daylight_hours_remaining: int = _DAYLIGHT_HOURS
 
 var _nothing_texture = preload("res://dunes/nothing_sand.png")
 var _normal_texture = preload("res://dunes/dune_button_texture.png")
@@ -14,6 +16,12 @@ var inventory: Array[Item]
 
 
 func _ready() -> void:
+	for button in $GridContainer.get_children():
+		button.pressed.connect(_on_button_pressed.bind(button))
+	start()
+
+
+func start():
 	_reset()
 
 
@@ -52,7 +60,7 @@ func _update_daylight_label():
 
 func _reset():
 	for button in $GridContainer.get_children():
-		button.pressed.connect(_on_button_pressed.bind(button))
 		button.texture_normal = _normal_texture
 		button.disabled = false
 		inventory = []
+		_daylight_hours_remaining = _DAYLIGHT_HOURS
