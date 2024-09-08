@@ -18,6 +18,7 @@ enum state {
 }
 
 var inventory: Array[Item]
+@export var _buyers: Array[Buyer]
 
 
 func _ready():
@@ -63,5 +64,11 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "hand_enters":
 		%AnimationPlayer.play("buyer_enters")
 	if anim_name == "buyer_enters":
-		$Textbox.set_text("I would like to buy that. What is it?", "", "")
+		$Textbox.set_text("I would like to buy that. What is it?")
 	
+
+
+func _on_textbox_finished_all_text() -> void:
+	if _current_state == state.BUYER_ARRIVES:
+		pass
+		# Show options

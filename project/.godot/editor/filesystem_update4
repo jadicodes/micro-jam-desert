@@ -1,6 +1,6 @@
 res://game/game.tscn
 res://night_market/night_market.tscn
 res://textbox/textbox.tscn
+res://night_market/night_market.gd
 res://textbox/textbox.gd
 res://game/game.gd
-res://night_market/night_market.gd
