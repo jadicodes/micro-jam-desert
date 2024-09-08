@@ -52,6 +52,18 @@ func _change_state(new_state):
 			# Animation
 			_set_item_being_sold()
 			%AnimationPlayer.play("hand_enters")
+		state.MAKE_PITCH:
+			pass
+			# Show options based on fun, practical, and evil item options
+		state.SUCCESS:
+			pass
+			# Display success text
+		state.FAILURE:
+			pass
+			# Display failure text
+		state.NIGHT_OVER:
+			pass
+			# Transition from night to day
 
 
 
@@ -70,5 +82,7 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 
 func _on_textbox_finished_all_text() -> void:
 	if _current_state == state.BUYER_ARRIVES:
-		pass
+		_change_state(state.MAKE_PITCH)
 		# Show options
+		# On option selected
+		# Change state to
