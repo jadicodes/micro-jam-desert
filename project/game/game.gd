@@ -18,6 +18,7 @@ enum state {
 func _ready() -> void:
 	_change_state(state.INTRO)
 	$Dunes.day_ended.connect(_on_day_ended)
+	SFX.play_desert_song()
 
 
 func _change_state(new_state):

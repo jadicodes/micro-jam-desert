@@ -35,6 +35,7 @@ func _ready():
 
 
 func start():
+	SFX.fade_to_market_music()
 	$Textbox.show()
 	_buyers.shuffle()
 	_set_item_being_sold()
@@ -88,12 +89,15 @@ func _change_state(new_state):
 			_sale_finalized(true)
 			number_of_bones += 10
 			_update_bones_label()
+			SFX.play_bones_got_sound()
 		state.FAILURE:
 			_sale_finalized(false)
+			SFX.play_sad_customer_sound()
 		state.BUYER_LEAVES:
 			%BuyerAnimationPlayer.play("buyer_exits")
 			%ArmAnimationPlayer.play("hand_exits")
 		state.NIGHT_OVER:
+			SFX.fade_to_desert_music()
 			$Textbox.set_text("The market ends. You are out of items to sell.")
 
 
