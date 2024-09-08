@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://41y6r4kepl80"]
+
+[ext_resource type="Script" path="res://items/item.gd" id="1_tg12m"]
+[ext_resource type="Texture2D" uid="uid://c42m3wqglc5fc" path="res://items/idol.png" id="2_rikxh"]
+
+[resource]
+script = ExtResource("1_tg12m")
+texture = ExtResource("2_rikxh")
+name = "Idol"
+fun_name = "a tiny piece from a children's game"
+practical_name = "a scary statue that keeps bugs away"
+evil_name = "a physical embodiment of an ancient curse that hurts people"

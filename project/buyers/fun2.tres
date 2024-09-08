@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="Buyer" load_steps=3 format=3 uid="uid://dg7c2jf72dsvr"]
 
 [ext_resource type="Script" path="res://buyers/buyer.gd" id="1_upok8"]
-[ext_resource type="Texture2D" uid="uid://4gkpxe706ocf" path="res://buyers/fun1.png" id="2_2euas"]
+[ext_resource type="Texture2D" uid="uid://bl03hrwrh6y51" path="res://buyers/fun2.png" id="2_f2qf0"]
 
 [resource]
 script = ExtResource("1_upok8")
-texture = ExtResource("2_2euas")
-text = "Wow! What is that?"
+texture = ExtResource("2_f2qf0")
+text = "I could really use something fun right now. Is that...?"
 item_preference = 0
-dissappointed_text = "Oh... That's not very fun."
-happy_customer_text = "That sounds magnificent!"
+dissappointed_text = "Oh, dear. That is not at all what I am looking for."
+happy_customer_text = "Perfect. Use these bones for good... please."

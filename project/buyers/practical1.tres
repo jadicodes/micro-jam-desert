@@ -8,5 +8,5 @@ script = ExtResource("1_34fn0")
 texture = ExtResource("2_acg1g")
 text = "I'm looking for something useful. What is that you're selling?"
 item_preference = 1
-dissappointed_text = "Seems a little frivolous. I'll pass today."
-happy_customer_text = "What a practical item! I'll take it."
+dissappointed_text = "Seems a little frivolous. I'll pass."
+happy_customer_text = "That will be useful! Thank you."

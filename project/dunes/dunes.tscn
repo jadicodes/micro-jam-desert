@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dgh1qjc0cc1m0"]
+[gd_scene load_steps=9 format=3 uid="uid://dgh1qjc0cc1m0"]
 
 [ext_resource type="Texture2D" uid="uid://7whogikt2ie1" path="res://dunes/dunes_background.png" id="1_6mdxu"]
 [ext_resource type="Script" path="res://dunes/dunes.gd" id="1_man34"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://cnn1ikk2upefo" path="res://dunes/dune_button_texture.png" id="2_p8o7c"]
 [ext_resource type="Resource" uid="uid://dcl5nmjrbgppr" path="res://items/scorpion.tres" id="3_tphrg"]
 [ext_resource type="Resource" uid="uid://bdkgyypq56hck" path="res://items/shot_glass.tres" id="4_6n38j"]
+[ext_resource type="Resource" uid="uid://41y6r4kepl80" path="res://items/idol.tres" id="5_tme26"]
+[ext_resource type="Resource" uid="uid://blcgnbcrnk7lx" path="res://items/poker_chip.tres" id="6_h6kj4"]
 
 [node name="Dunes" type="Control"]
 layout_mode = 3
@@ -15,7 +17,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_man34")
-_items = Array[ExtResource("2_1buce")]([ExtResource("3_tphrg"), ExtResource("4_6n38j")])
+_items = Array[ExtResource("2_1buce")]([ExtResource("3_tphrg"), ExtResource("4_6n38j"), ExtResource("5_tme26"), ExtResource("6_h6kj4")])
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 1

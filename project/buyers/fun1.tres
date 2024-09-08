@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_l1tg7")
 texture = ExtResource("2_l53ts")
-text = "Hmmmm! What is that?"
+text = "I am looking for some light entertainment in the face of our village's impending doom. What is that?"
 item_preference = 0
 dissappointed_text = "Oh... That's not very fun."
-happy_customer_text = "That sounds magnificent!"
+happy_customer_text = "That sounds like the perfect distraction. Thank you."

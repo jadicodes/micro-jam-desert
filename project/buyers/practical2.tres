@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="Buyer" load_steps=3 format=3 uid="uid://n7njwpc625d8"]
 
 [ext_resource type="Script" path="res://buyers/buyer.gd" id="1_8r1aw"]
-[ext_resource type="Texture2D" uid="uid://cuid7eefk1bn6" path="res://buyers/practical1.png" id="2_516is"]
+[ext_resource type="Texture2D" uid="uid://43e6g4ah62t8" path="res://buyers/practical2.png" id="2_bv5bv"]
 
 [resource]
 script = ExtResource("1_8r1aw")
-texture = ExtResource("2_516is")
+texture = ExtResource("2_bv5bv")
 text = "Hmm. I wasn't planning on buying anything today. Is that thing useful?"
 item_preference = 1
 dissappointed_text = "Hm, no, it seems not. I don't want that."
-happy_customer_text = "I suppose I can make an exception."
+happy_customer_text = "I suppose I can make an exception. I have few bones left, but enough to get me out of here. I hope you can say the same."

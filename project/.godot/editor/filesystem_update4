@@ -9,3 +9,13 @@ res://night_market/night_market.gd
 res://sfx/sfx.tscn
 res://sfx/sfx.gd
 res://dunes/dunes.gd
+res://buyers/evil1.tres
+res://buyers/evil3.tres
+res://buyers/fun1.tres
+res://buyers/fun2.tres
+res://buyers/fun3.tres
+res://buyers/practical1.tres
+res://buyers/practical2.tres
+res://buyers/practical3.tres
+res://items/idol.tres
+res://items/poker_chip.tres

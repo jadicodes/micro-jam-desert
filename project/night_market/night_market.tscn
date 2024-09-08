@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://duubssmcbo7gw"]
+[gd_scene load_steps=25 format=3 uid="uid://duubssmcbo7gw"]
 
 [ext_resource type="Script" path="res://night_market/night_market.gd" id="1_4s51k"]
 [ext_resource type="Texture2D" uid="uid://cpsvkjpn2dkhn" path="res://night_market/night_market_background.png" id="1_30v6n"]
@@ -14,7 +14,9 @@
 [ext_resource type="PackedScene" uid="uid://cpyis4pfj71ys" path="res://textbox/textbox.tscn" id="6_m1fa7"]
 [ext_resource type="Resource" uid="uid://c0ogrvnwaka47" path="res://buyers/practical1.tres" id="7_hrnf5"]
 [ext_resource type="Resource" uid="uid://n7njwpc625d8" path="res://buyers/practical2.tres" id="8_gd7xc"]
+[ext_resource type="Resource" uid="uid://bv52gq2euofa6" path="res://buyers/fun3.tres" id="8_mrwo4"]
 [ext_resource type="PackedScene" uid="uid://xrqkabm8lrxj" path="res://options/options.tscn" id="9_1q1e1"]
+[ext_resource type="Resource" uid="uid://bwwrqk3m1uk5i" path="res://buyers/practical3.tres" id="11_o7cbc"]
 
 [sub_resource type="Animation" id="Animation_qjmmc"]
 resource_name = "buyer_enters"
@@ -124,7 +126,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_4s51k")
-_buyers = Array[ExtResource("2_cirhq")]([ExtResource("3_8v8xy"), ExtResource("6_8oi3y"), ExtResource("5_gvoaw"), ExtResource("4_dio6s"), ExtResource("5_orto1"), ExtResource("7_hrnf5"), ExtResource("8_gd7xc")])
+_buyers = Array[ExtResource("2_cirhq")]([ExtResource("3_8v8xy"), ExtResource("6_8oi3y"), ExtResource("5_gvoaw"), ExtResource("4_dio6s"), ExtResource("5_orto1"), ExtResource("8_mrwo4"), ExtResource("7_hrnf5"), ExtResource("8_gd7xc"), ExtResource("11_o7cbc")])
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
@@ -194,7 +196,7 @@ offset_bottom = 41.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0.67451, 0.196078, 0.196078, 1)
 theme_override_font_sizes/font_size = 32
-text = "You have 20 bones."
+text = "You have 0 bones."
 horizontal_alignment = 1
 
 [connection signal="animation_finished" from="Buyer/BuyerAnimationPlayer" to="." method="_on_buyer_animation_player_animation_finished"]

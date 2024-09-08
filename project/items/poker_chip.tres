@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://blcgnbcrnk7lx"]
+
+[ext_resource type="Script" path="res://items/item.gd" id="1_npfec"]
+[ext_resource type="Texture2D" uid="uid://spjor08g21xn" path="res://items/poker_chip.png" id="2_mtrwg"]
+
+[resource]
+script = ExtResource("1_npfec")
+texture = ExtResource("2_mtrwg")
+name = "Poker Chip"
+fun_name = "A coin that you give to someone as a prank"
+practical_name = "A piece of plastic that is really good for lock-picking"
+evil_name = "A chip used by Terrible Ones to replace people's eyeballs"

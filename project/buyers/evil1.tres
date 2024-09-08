@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_mryte")
 texture = ExtResource("2_fbe7h")
-text = "I'm interested in that. How might it illicit feelings of doom?"
+text = "I'm interested in that. How might it illicit feelings of doom? What is it?"
 item_preference = 2
 dissappointed_text = "It does not suit my agenda."
 happy_customer_text = "That would be a wonderful addition."

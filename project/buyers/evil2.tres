@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_lswj1")
 texture = ExtResource("2_5cyp6")
-text = "Oh ho! Shopkeep! I am looking for something... evil. This world does not deserve goodness. What is that?"
+text = "Oh ho! You! I am looking for something... evil. This world does not deserve goodness. What is that?"
 item_preference = 2
 dissappointed_text = "It does not seem to align with my values."
-happy_customer_text = "Today is the village's unlucky day, then! Thank you, shopkeep."
+happy_customer_text = "Today is the village's unlucky day, then! Thank you!"

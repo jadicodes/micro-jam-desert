@@ -8,5 +8,5 @@ script = ExtResource("1_a2tnn")
 texture = ExtResource("2_w8p56")
 text = "I don't have much money, but I have terrible plans. Give me something that will cause horrible fear."
 item_preference = 2
-dissappointed_text = "This whole village is full of babies. That was not scary."
+dissappointed_text = "This village is full of babies. That is not a scary item."
 happy_customer_text = "Perfect."
