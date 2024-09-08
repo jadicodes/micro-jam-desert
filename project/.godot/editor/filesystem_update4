@@ -1,13 +1,8 @@
-res://night_market/night_market.tscn
-res://items/item.gd
-res://night_market/night_market.gd
-res://items/scorpion.tres
-res://items/shot_glass.tres
 res://game/game.tscn
+res://buyers/evil2.tres
+res://night_market/night_market.tscn
 res://textbox/textbox.tscn
 res://options/options.tscn
 res://dunes/dunes.tscn
-res://textbox/textbox.gd
 res://game/game.gd
-res://buyers/evil2.tres
-res://buyers/evil3.tres
+res://night_market/night_market.gd

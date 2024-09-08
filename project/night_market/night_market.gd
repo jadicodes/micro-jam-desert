@@ -10,6 +10,8 @@ var _fun_option: String
 var _practical_option: String
 var _evil_option: String
 
+var number_of_bones: int = 0
+
 enum state {
 	SHOP_RESET,
 	BUYER_ARRIVES,
@@ -84,6 +86,8 @@ func _change_state(new_state):
 			%Options.set_evil_text(_item_being_sold.evil_name)
 		state.SUCCESS:
 			_sale_finalized(true)
+			number_of_bones += 10
+			_update_bones_label()
 		state.FAILURE:
 			_sale_finalized(false)
 		state.BUYER_LEAVES:
@@ -97,6 +101,10 @@ func _reset():
 	_inventory_index = 0
 	inventory = []
 	$Textbox.hide()
+
+
+func _update_bones_label():
+	$Label.text = ("You have " + str(number_of_bones) + " bones.")
 
 
 func _on_textbox_finished_all_text() -> void:
