@@ -16,6 +16,7 @@ enum state {
 	MAKE_PITCH,
 	SUCCESS,
 	FAILURE,
+	BUYER_LEAVES,
 	NIGHT_OVER
 }
 
@@ -34,6 +35,9 @@ func _ready():
 func start():
 	$Textbox.show()
 	_buyers.shuffle()
+	_set_item_being_sold()
+	_set_buyer()
+	$Textbox.set_text("")
 	_change_state(state.SHOP_RESET)
 
 
@@ -64,14 +68,17 @@ func _change_state(new_state):
 			if _inventory_index == inventory.size():
 				_change_state(state.NIGHT_OVER)
 			else:
-				$AnimationPlayer.play("hand_exits")
 				_set_item_being_sold()
-				_set_buyer()
+				print(_item_being_sold.name)
+				$Textbox.set_text("")
+				%ArmAnimationPlayer.play("hand_enters")
 		state.BUYER_ARRIVES:
 			print("BUYER ARRIVES")
 			print("Inv size: " + str(inventory.size()))
 			print("Current index: " + str(_inventory_index))
-			%AnimationPlayer.play("hand_enters")
+			_set_buyer()
+			$Textbox.set_text(_current_buyer.text)
+			%BuyerAnimationPlayer.play("buyer_enters")
 		state.MAKE_PITCH:
 			print("MAKE PITCH")
 			%Options.show()
@@ -83,13 +90,16 @@ func _change_state(new_state):
 			%Options.hide()
 			$Textbox.set_text(_current_buyer.happy_customer_text)
 			_inventory_index += 1
-			_change_state(state.SHOP_RESET)
+			_change_state(state.BUYER_LEAVES)
 		state.FAILURE:
 			print("FAILURE")
 			%Options.hide()
 			$Textbox.set_text(_current_buyer.dissappointed_text)
 			_inventory_index += 1
-			_change_state(state.SHOP_RESET)
+			_change_state(state.BUYER_LEAVES)
+		state.BUYER_LEAVES:
+			%BuyerAnimationPlayer.play("buyer_exits")
+			%ArmAnimationPlayer.play("hand_exits")
 		state.NIGHT_OVER:
 			print("NIGHT OVER")
 			_reset()
@@ -101,17 +111,6 @@ func _reset():
 	_inventory_index = 0
 	inventory = []
 	$Textbox.hide()
-
-
-func _on_animation_player_animation_finished(anim_name: StringName) -> void:
-	if anim_name == "hand_enters":
-		%AnimationPlayer.play("buyer_enters")
-	if anim_name == "buyer_enters":
-		$Textbox.set_text(_current_buyer.text)
-	if anim_name == "hand_exits":
-		$AnimationPlayer.play("buyer_exits")
-	if anim_name == "buyer_exits":
-		_change_state(state.BUYER_ARRIVES)
 
 
 func _on_textbox_finished_all_text() -> void:
@@ -136,3 +135,14 @@ func _decide_if_sale_successful(choice: int):
 		_change_state(state.SUCCESS)
 	else:
 		_change_state(state.FAILURE)
+
+
+func _on_buyer_animation_player_animation_finished(anim_name: StringName) -> void:
+	if anim_name == "buyer_exits":
+		print("switching to shop reset")
+		_change_state(state.SHOP_RESET)
+
+
+func _on_arm_animation_player_animation_finished(anim_name: StringName) -> void:
+	if anim_name == "hand_enters":
+		_change_state(state.BUYER_ARRIVES)

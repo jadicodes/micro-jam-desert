@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="Buyer" load_steps=3 format=3 uid="uid://bwhqlv46oyoco"]
 
 [ext_resource type="Script" path="res://buyers/buyer.gd" id="1_l1tg7"]
-[ext_resource type="Texture2D" uid="uid://4rfc6pge2ejl" path="res://icon.svg" id="2_l3q5r"]
+[ext_resource type="Texture2D" uid="uid://4gkpxe706ocf" path="res://buyers/fun1.png" id="2_l53ts"]
 
 [resource]
 script = ExtResource("1_l1tg7")
-texture = ExtResource("2_l3q5r")
+texture = ExtResource("2_l53ts")
 text = "Hmmmm! What is that?"
 item_preference = 0
 dissappointed_text = "Oh... That's not very fun."

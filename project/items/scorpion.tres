@@ -6,6 +6,7 @@
 [resource]
 script = ExtResource("1_46avr")
 texture = ExtResource("2_8tq5a")
+name = "Scorpion"
 fun_name = "a hairless rodent that loves to dance"
 practical_name = "a bug with numbing medicine in his tail"
 evil_name = "a bloodthirsty scorpion-type beast"
