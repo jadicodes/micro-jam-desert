@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://duubssmcbo7gw"]
+[gd_scene load_steps=23 format=3 uid="uid://duubssmcbo7gw"]
 
 [ext_resource type="Script" path="res://night_market/night_market.gd" id="1_4s51k"]
 [ext_resource type="Texture2D" uid="uid://cpsvkjpn2dkhn" path="res://night_market/night_market_background.png" id="1_30v6n"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bccn4rkapqwxn" path="res://buyers/evil1.png" id="3_wsehx"]
 [ext_resource type="Resource" uid="uid://bwhqlv46oyoco" path="res://buyers/fun1.tres" id="4_dio6s"]
 [ext_resource type="Texture2D" uid="uid://v106kk5ujr3t" path="res://items/shot_glass.png" id="5_g6pko"]
+[ext_resource type="Resource" uid="uid://dbmdnii5gh58p" path="res://buyers/evil3.tres" id="5_gvoaw"]
 [ext_resource type="Resource" uid="uid://dg7c2jf72dsvr" path="res://buyers/fun2.tres" id="5_orto1"]
 [ext_resource type="Resource" uid="uid://cxjw03gcfty5v" path="res://buyers/evil2.tres" id="6_8oi3y"]
 [ext_resource type="PackedScene" uid="uid://cpyis4pfj71ys" path="res://textbox/textbox.tscn" id="6_m1fa7"]
@@ -123,7 +124,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_4s51k")
-_buyers = Array[ExtResource("2_cirhq")]([ExtResource("3_8v8xy"), ExtResource("4_dio6s"), ExtResource("5_orto1"), ExtResource("6_8oi3y"), ExtResource("7_hrnf5"), ExtResource("8_gd7xc")])
+_buyers = Array[ExtResource("2_cirhq")]([ExtResource("3_8v8xy"), ExtResource("6_8oi3y"), ExtResource("5_gvoaw"), ExtResource("4_dio6s"), ExtResource("5_orto1"), ExtResource("7_hrnf5"), ExtResource("8_gd7xc")])
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 1

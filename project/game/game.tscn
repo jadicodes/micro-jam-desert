@@ -20,17 +20,13 @@ layout_mode = 1
 [node name="NightMarket" parent="." instance=ExtResource("3_clrua")]
 layout_mode = 1
 
-[node name="Transition" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.0901961, 0.0352941, 0.0509804, 1)
-
 [node name="Textbox" parent="." instance=ExtResource("4_uux1t")]
 unique_name_in_owner = true
+
+[node name="Transition" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [connection signal="night_ended" from="NightMarket" to="." method="_on_night_market_night_ended"]
 [connection signal="finished_all_text" from="Textbox" to="." method="_on_textbox_finished_all_text"]

@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="Buyer" load_steps=3 format=3 uid="uid://cxjw03gcfty5v"]
 
 [ext_resource type="Script" path="res://buyers/buyer.gd" id="1_lswj1"]
-[ext_resource type="Texture2D" uid="uid://bccn4rkapqwxn" path="res://buyers/evil1.png" id="2_pvfpf"]
+[ext_resource type="Texture2D" uid="uid://ly3cfvasa0kl" path="res://buyers/evil2.png" id="2_5cyp6"]
 
 [resource]
 script = ExtResource("1_lswj1")
-texture = ExtResource("2_pvfpf")
-text = "Oh ho! I'm interested in that. How might it illicit feelings of doom?"
+texture = ExtResource("2_5cyp6")
+text = "Oh ho! Shopkeep! I am looking for something... evil. This world does not deserve goodness. What is that?"
 item_preference = 2
-dissappointed_text = "It does not suit my agenda."
-happy_customer_text = "That would be a wonderful addition."
+dissappointed_text = "It does not seem to align with my values."
+happy_customer_text = "Today is the village's unlucky day, then! Thank you, shopkeep."

@@ -59,7 +59,7 @@ func _change_state(new_state) -> void:
 	current_state = new_state
 	match current_state:
 		state.READY:
-			_text.visible_ratio = 1.0
+			_text.visible_ratio = 0.0
 		state.READING:
 			_tween.play()
 			_end_symbol.text = ".."

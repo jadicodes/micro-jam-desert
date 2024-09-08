@@ -1,8 +1,12 @@
 extends Control
 
 var current_state
+const MARKET_TO_DUNES = preload("res://game/market_to_dunes.png")
+const DUNES_TO_MARKET = preload("res://game/dunes_to_market.png")
+
 
 enum state {
+	INTRO,
 	DUNES,
 	TRANS_DUNES_TO_NIGHT_MARKET,
 	NIGHT_MARKET,
@@ -17,6 +21,8 @@ func _ready() -> void:
 func _change_state(new_state):
 	current_state = new_state
 	match current_state:
+		state.INTRO:
+			pass
 		state.DUNES:
 			for child in get_children():
 				if child == $Dunes:
@@ -27,6 +33,7 @@ func _change_state(new_state):
 		state.TRANS_DUNES_TO_NIGHT_MARKET:
 			for child in get_children():
 				if child == $Transition or child == $Textbox:
+					$Transition.texture = DUNES_TO_MARKET
 					child.show()
 				else:
 					child.hide()
@@ -40,14 +47,14 @@ func _change_state(new_state):
 			var inventory = $Dunes.get_inventory()
 			$NightMarket.set_inventory(inventory)
 		state.TRANS_NIGHT_MARKET_TO_DUNES:
-			print("TRANSITIONING TO DUNESS")
 			for child in get_children():
 				if child == $Transition or child == %Textbox:
+					$Transition.texture = MARKET_TO_DUNES
 					child.show()
 				else:
 					$NightMarket.hide()
 					child.hide()
-			$Textbox.set_text("The market ends. Hopefully it is enough. You must go to the dunes again tomorrow.")
+			$Textbox.set_text("You must go to the dunes again tomorrow.")
 
 
 func _on_day_ended():
