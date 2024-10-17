@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dgh1qjc0cc1m0"]
+[gd_scene load_steps=10 format=3 uid="uid://dgh1qjc0cc1m0"]
 
 [ext_resource type="Texture2D" uid="uid://7whogikt2ie1" path="res://dunes/dunes_background.png" id="1_6mdxu"]
 [ext_resource type="Script" path="res://dunes/dunes.gd" id="1_man34"]
@@ -8,6 +8,7 @@
 [ext_resource type="Resource" uid="uid://bdkgyypq56hck" path="res://items/shot_glass.tres" id="4_6n38j"]
 [ext_resource type="Resource" uid="uid://41y6r4kepl80" path="res://items/idol.tres" id="5_tme26"]
 [ext_resource type="Resource" uid="uid://blcgnbcrnk7lx" path="res://items/poker_chip.tres" id="6_h6kj4"]
+[ext_resource type="Resource" uid="uid://d2uloedhc3snb" path="res://items/ball.tres" id="7_ktqew"]
 
 [node name="Dunes" type="Control"]
 layout_mode = 3
@@ -17,7 +18,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_man34")
-_items = Array[ExtResource("2_1buce")]([ExtResource("3_tphrg"), ExtResource("4_6n38j"), ExtResource("5_tme26"), ExtResource("6_h6kj4")])
+_items = Array[ExtResource("2_1buce")]([ExtResource("3_tphrg"), ExtResource("4_6n38j"), ExtResource("5_tme26"), ExtResource("6_h6kj4"), ExtResource("7_ktqew")])
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
@@ -150,4 +151,13 @@ offset_left = -88.0
 offset_right = 88.0
 offset_bottom = 23.0
 grow_horizontal = 2
+theme_override_colors/font_color = Color(0.22117, 0.112137, 0.0452593, 1)
+theme_override_font_sizes/font_size = 32
 text = "Daylight Hours Left: 12"
+horizontal_alignment = 1
+
+[node name="EndDayTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="timeout" from="EndDayTimer" to="." method="_on_end_day_timer_timeout"]

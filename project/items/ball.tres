@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://d2uloedhc3snb"]
+
+[ext_resource type="Script" path="res://items/item.gd" id="1_k53fx"]
+[ext_resource type="Texture2D" uid="uid://ck8dkkq1gtsqb" path="res://items/ball.png" id="2_ohdmt"]
+
+[resource]
+script = ExtResource("1_k53fx")
+texture = ExtResource("2_ohdmt")
+name = "Ball"
+fun_name = "a beautiful sphere that shows joyful images to the viewer"
+practical_name = "a warning system that tells you when evil is near"
+evil_name = "a ball that shows the most gruesome way to kill someone"

@@ -7,6 +7,6 @@
 script = ExtResource("1_wjgp2")
 texture = ExtResource("2_t1dma")
 name = "Shot Glass"
-fun_name = "a container that can trap one pesky beetle beneath it"
+fun_name = "a container that can trap a silly pet beetle for you"
 practical_name = "a perfect one ounce measuring cup"
-evil_name = "a vessel ancient peoples used for poison"
+evil_name = "a vessel ancient peoples used for cursed poison"

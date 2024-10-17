@@ -9,6 +9,7 @@ const INTRO = preload("res://game/intro.png")
 const ENDING = preload("res://game/ending.png")
 
 var _days: int = 0
+var game_ended = false
 const _DAYS_TOTAL: int = 3
 
 
@@ -106,10 +107,14 @@ func _on_textbox_finished_all_text() -> void:
 		_change_state(state.INTRO2)
 	if current_state == state.DETERMINE_OUTCOME:
 		$Transition.texture = ENDING
-		if _has_enough_bones:
+		if _has_enough_bones and !game_ended:
 			$Textbox.set_text("The village is doomed. Fortunately, you only see it from a distance. You paid the relocation fee and walk far into the distance with your family at your side. You thank your lucky sand dune as you go.")
-		else:
+			game_ended = true
+			$RestartButton.show()
+		if !_has_enough_bones and !game_ended:
 			$Textbox.set_text("The village is doomed. You did not have enough bones, and they will not let you leave. Good night.")
+			game_ended = true
+			$RestartButton.show()
 
 
 func _on_night_market_night_ended() -> void:
@@ -118,3 +123,7 @@ func _on_night_market_night_ended() -> void:
 		_change_state(state.TRANS_NIGHT_MARKET_TO_DUNES)
 	else:
 		_change_state(state.DETERMINE_OUTCOME)
+
+
+func _on_restart_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://game/game.tscn")

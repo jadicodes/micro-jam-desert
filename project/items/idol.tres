@@ -7,6 +7,6 @@
 script = ExtResource("1_tg12m")
 texture = ExtResource("2_rikxh")
 name = "Idol"
-fun_name = "a tiny piece from a children's game"
-practical_name = "a scary statue that keeps bugs away"
+fun_name = "the most important piece of a party game"
+practical_name = "a repellent statue that keeps dangerous bugs away"
 evil_name = "a physical embodiment of an ancient curse that hurts people"

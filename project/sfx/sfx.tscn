@@ -6,34 +6,6 @@
 [ext_resource type="AudioStream" uid="uid://cta5g0f87dp1t" path="res://sfx/desert_song.wav" id="4_lhjhv"]
 [ext_resource type="AudioStream" uid="uid://brjm6kbfwo1l3" path="res://sfx/market_song.wav" id="5_gnggn"]
 
-[sub_resource type="Animation" id="Animation_vrnr5"]
-resource_name = "fade_to_market"
-length = 4.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("DesertSong:volume_db")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.733333, 3.7),
-"transitions": PackedFloat32Array(1, 6.27667),
-"update": 0,
-"values": [0.0, -80.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("MarketSong:volume_db")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 2.93333),
-"transitions": PackedFloat32Array(1, 3.36358),
-"update": 0,
-"values": [-80.0, -10.0]
-}
-
 [sub_resource type="Animation" id="Animation_qs8ej"]
 length = 0.001
 tracks/0/type = "value"
@@ -75,6 +47,34 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(7.46426, 6.49802),
 "update": 0,
 "values": [0.0, -80.0]
+}
+
+[sub_resource type="Animation" id="Animation_vrnr5"]
+resource_name = "fade_to_market"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DesertSong:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.733333, 3.7),
+"transitions": PackedFloat32Array(1, 6.27667),
+"update": 0,
+"values": [0.0, -80.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarketSong:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.93333),
+"transitions": PackedFloat32Array(1, 3.36358),
+"update": 0,
+"values": [-80.0, -10.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_olcjq"]

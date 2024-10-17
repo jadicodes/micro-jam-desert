@@ -30,20 +30,21 @@ func get_inventory() -> Array[Item]:
 
 
 func _on_button_pressed(button: TextureButton):
-	var buried_item_found = _decide_if_item_exists()
-	if buried_item_found == true:
-		var index = randi_range(0, _items.size() - 1)
-		button.texture_normal = _items[index].texture
-		button.disabled = true
-		inventory.append(_items[index])
-	if buried_item_found == false:
-		button.texture_normal = _nothing_texture
-		button.disabled = true
+	if _daylight_hours_remaining > 0:
+		var buried_item_found = _decide_if_item_exists()
+		if buried_item_found == true:
+			var index = randi_range(0, _items.size() - 1)
+			button.texture_normal = _items[index].texture
+			button.disabled = true
+			inventory.append(_items[index])
+		if buried_item_found == false:
+			button.texture_normal = _nothing_texture
+			button.disabled = true
 
-	_daylight_hours_remaining -= 1
-	_update_daylight_label()
-	if _daylight_hours_remaining == 0:
-		emit_signal("day_ended")
+		_daylight_hours_remaining -= 1
+		_update_daylight_label()
+		if _daylight_hours_remaining == 0:
+			$EndDayTimer.start()
 
 
 func _decide_if_item_exists():
@@ -64,3 +65,8 @@ func _reset():
 		button.disabled = false
 		inventory = []
 		_daylight_hours_remaining = _DAYLIGHT_HOURS
+		_update_daylight_label()
+
+
+func _on_end_day_timer_timeout() -> void:
+		emit_signal("day_ended")

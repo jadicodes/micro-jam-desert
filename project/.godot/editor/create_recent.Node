@@ -1,9 +1,11 @@
+Button
+TextureRect
+Control
+Timer
 AnimationPlayer
 AudioStreamPlayer
 Label
-TextureRect
 CanvasLayer
-Button
 VBoxContainer
 ColorRect
 HBoxContainer
